@@ -337,87 +337,10 @@ template {
   --color-black: hsl(0, 0%, 0%);
   --color-gray: hsl(240, 2%, 57%);
   --color-gray2: hsl(240, 3%, 69%);
-  --color-gray3:	hsl(240, 5%, 79%);
-  --color-gray4:	hsl(240, 6%, 83%);
-  --color-gray5:	hsl(240, 11%, 91%);
+  --color-gray3: hsl(240, 5%, 79%);
+  --color-gray4: hsl(240, 6%, 83%);
+  --color-gray5: hsl(240, 11%, 91%);
   --color-gray6: hsl(240, 24%, 96%);
-  --text-primary: hsla(0, 0%, 0%, 0.85);
-  --text-secondary: hsla(0, 0%, 0%, 0.50);
-  --text-tertiary: hsla(0, 0%, 0%, 0.25);
-  --text-quaternary: hsla(0, 0%, 0%, 0.10);
-  --text-quinary: hsla(0, 0%, 0%, 0.05);
-  --background-color: var(--color-white);
-  --surface-color-primary:	hsl(240, 51%, 100%, 0.9);
-  --surface-color-secondary: hsl(240, 25%, 98%);
-  --surface-color-tertiary: hsl(0, 0%, 94%);
-  --surface-color-quaternary: hsl(240, 11%, 96%) ;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-red: hsl(359, 100%, 63%);
-    --color-orange: hsl(28, 100%, 59%);
-    --color-yellow: hsl(50, 100%, 50%);
-    --color-green: hsl(135, 64%, 50%);
-    --color-mint: hsl(174, 100%, 43%);
-    --color-teal: hsl(184, 100%, 44%);
-    --color-cyan: hsl(197, 100%, 70%);
-    --color-blue: hsl(206, 100%, 50%);
-    --color-indigo: hsl(234, 100%, 71%);
-    --color-purple: hsl(293, 88%, 58%);
-    --color-pink: hsl(348, 100%, 61%);
-    --color-brown: hsl(27, 36%, 56%);
-    --color-gray: hsl(240, 2%, 61%);
-    --color-white: hsl(0, 0%, 100%);
-    --color-black: hsl(0, 0%, 0%);
-    --color-gray2:	hsl(240, 1%, 39%);
-    --color-gray3:	hsl(240, 1%, 29%);
-    --color-gray4:	hsl(240, 2%, 23%);
-    --color-gray5: hsl(240, 2%, 18%);
-    --color-gray6:	hsl(240, 3%, 11%);
-    --text-primary: hsla(0, 0%, 100%, 0.85);
-    --text-secondary: hsla(0, 0%, 100%, 0.50);
-    --text-tertiary: hsla(0, 0%, 100%, 0.25);
-    --text-quaternary: hsla(0, 0%, 100%, 0.10);
-    --text-quinary: hsla(0, 0%, 100%, 0.05);
-    --background-color: var(--color-black);
-    --surface-color-primary: var(--color-black);
-    --surface-color-secondary:	hsl(240, 2%, 9%);
-    --surface-color-tertiary: hsl(240, 3%, 12%);
-    --surface-color-quaternary: hsl(240, 2%, 9%);
-  }
-}
-.dark {
-  --color-red: hsl(359, 100%, 63%);
-  --color-orange: hsl(28, 100%, 59%);
-  --color-yellow: hsl(50, 100%, 50%);
-  --color-green: hsl(135, 64%, 50%);
-  --color-mint: hsl(174, 100%, 43%);
-  --color-teal: hsl(184, 100%, 44%);
-  --color-cyan: hsl(197, 100%, 70%);
-  --color-blue: hsl(206, 100%, 50%);
-  --color-indigo: hsl(234, 100%, 71%);
-  --color-purple: hsl(293, 88%, 58%);
-  --color-pink: hsl(348, 100%, 61%);
-  --color-brown: hsl(27, 36%, 56%);
-  --color-gray: hsl(240, 2%, 61%);
-  --color-white: hsl(0, 0%, 100%);
-  --color-black: hsl(0, 0%, 0%);
-  --color-gray2:	hsl(240, 1%, 39%);
-  --color-gray3:	hsl(240, 1%, 29%);
-  --color-gray4:	hsl(240, 2%, 23%);
-  --color-gray5: hsl(240, 2%, 18%);
-  --color-gray6:	hsl(240, 3%, 11%);
-  --text-primary: hsla(0, 0%, 100%, 0.85);
-  --text-secondary: hsla(0, 0%, 100%, 0.50);
-  --text-tertiary: hsla(0, 0%, 100%, 0.25);
-  --text-quaternary: hsla(0, 0%, 100%, 0.10);
-  --text-quinary: hsla(0, 0%, 100%, 0.05);
-  --background-color: var(--color-black);
-  --surface-color-primary: var(--color-black);
-  --surface-color-secondary:	hsl(240, 2%, 9%);
-  --surface-color-tertiary: hsl(240, 3%, 12%);
-  --surface-color-quaternary: hsl(240, 2%, 9%);
 }
 
 :root {
@@ -438,6 +361,11 @@ template {
   --color-focus-ring: hsla(208, 100%, 50%, 0.35);
   --shadow-color: hsla(240, 10%, 12%, 0.08);
   --shadow-color-strong: hsla(240, 10%, 12%, 0.14);
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 10px var(--shadow-color);
+  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --background-color: var(--color-background);
   --surface-color-primary: var(--color-surface);
   --surface-color-secondary: var(--color-surface-raised);
@@ -469,6 +397,11 @@ template {
     --color-focus-ring: hsla(197, 100%, 70%, 0.4);
     --shadow-color: hsla(0, 0%, 0%, 0.28);
     --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+    --shadow-none: none;
+    --shadow-sm: 0 1px 2px var(--shadow-color);
+    --shadow-md: 0 4px 10px var(--shadow-color);
+    --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+    --shadow-focus: 0 0 0 3px var(--color-focus-ring);
     --background-color: var(--color-background);
     --surface-color-primary: var(--color-surface);
     --surface-color-secondary: var(--color-surface-raised);
@@ -500,6 +433,11 @@ template {
   --color-focus-ring: hsla(197, 100%, 70%, 0.4);
   --shadow-color: hsla(0, 0%, 0%, 0.28);
   --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 10px var(--shadow-color);
+  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --background-color: var(--color-background);
   --surface-color-primary: var(--color-surface);
   --surface-color-secondary: var(--color-surface-raised);
@@ -636,21 +574,7 @@ template {
 }
 
 :root {
-  --offset-none: var(--space-0);
-  --offset-xxs: var(--space-2xs);
-  --offset-xs: var(--space-1);
-  --offset-sm: var(--space-2);
-  --offset-md: var(--space-4);
-  --offset-lg: var(--space-6);
-  --offset-xl: var(--space-8);
-  --offset-2xl: var(--space-10);
-  --offset-3xl: var(--space-12);
-  --offset-4xl: var(--space-16);
-  --offset-5xl: var(--space-20);
-}
-
-:root {
-  --inset-none: var(--offset-none);
+  --inset-none: var(--space-0);
   --inset-auto: auto;
   --inset-full: 100%;
   --inset-half: 50%;
@@ -728,11 +652,6 @@ template {
 }
 
 :root {
-  --shadow-none: none;
-  --shadow-sm: 0 1px 2px var(--shadow-color);
-  --shadow-md: 0 4px 10px var(--shadow-color);
-  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
-  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --transition-duration-fast: 120ms;
   --transition-duration-normal: 180ms;
   --transition-duration-slow: 240ms;

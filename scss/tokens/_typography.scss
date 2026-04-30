@@ -77,7 +77,7 @@
 // -----------------------------------------------------------------------------
 // Each step increases the scale as the viewport gets wider.
 
-@media (min-width: $breakpoint-xs) {
+@include breakpoint-up('xs') {
   :root {
     --text-base: 0.95rem;
     --text-lg: 1.025rem;
@@ -89,7 +89,7 @@
   }
 }
 
-@media (min-width: $breakpoint-sm) {
+@include breakpoint-up('sm') {
   :root {
     --text-base: 0.975rem;
     --text-lg: 1.05rem;
@@ -101,7 +101,7 @@
   }
 }
 
-@media (min-width: $breakpoint-md) {
+@include breakpoint-up('md') {
   :root {
     --text-base: 1rem;
     --text-lg: 1.075rem;
@@ -113,7 +113,7 @@
   }
 }
 
-@media (min-width: $breakpoint-lg) {
+@include breakpoint-up('lg') {
   :root {
     --text-base: 1.025rem;
     --text-lg: 1.1rem;
@@ -125,7 +125,7 @@
   }
 }
 
-@media (min-width: $breakpoint-xl) {
+@include breakpoint-up('xl') {
   :root {
     --text-base: 1.05rem;
     --text-lg: 1.125rem;
