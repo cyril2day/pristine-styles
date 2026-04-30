@@ -1,23 +1,35 @@
 // Breakpoint Tokens
 // =============================================================================
-// SCSS variables for use in media queries and mixins.
-// CSS custom properties are also defined for JavaScript/component usage.
+// Mobile-first breakpoint tokens.
+// Generic names are the primary API. Legacy names remain as compatibility
+// aliases.
 
 // -----------------------------------------------------------------------------
 // SCSS Variables (for media queries)
 // -----------------------------------------------------------------------------
 
-$breakpoint-small-phone: 480px;
-$breakpoint-phone-tablet-transition: 767px;
-$breakpoint-small-tablet: 1023px;
-$breakpoint-tablet-desktop-transition: 1068px;
-$breakpoint-small-desktop: 1250px;
+$breakpoint-xs: 30rem;
+$breakpoint-sm: 48rem;
+$breakpoint-md: 64rem;
+$breakpoint-lg: 67rem;
+$breakpoint-xl: 78.125rem;
+
+$breakpoint-small-phone: $breakpoint-xs;
+$breakpoint-phone-tablet-transition: $breakpoint-sm;
+$breakpoint-small-tablet: $breakpoint-md;
+$breakpoint-tablet-desktop-transition: $breakpoint-lg;
+$breakpoint-small-desktop: $breakpoint-xl;
 
 // -----------------------------------------------------------------------------
 // CSS Custom Properties (for runtime usage)
 // -----------------------------------------------------------------------------
 
 :root {
+  --breakpoint-xs: #{$breakpoint-xs};
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
   --breakpoint-small-phone: #{$breakpoint-small-phone};
   --breakpoint-phone-tablet-transition: #{$breakpoint-phone-tablet-transition};
   --breakpoint-small-tablet: #{$breakpoint-small-tablet};

@@ -308,11 +308,16 @@ template {
 }
 
 :root {
-  --breakpoint-small-phone: 480px;
-  --breakpoint-phone-tablet-transition: 767px;
-  --breakpoint-small-tablet: 1023px;
-  --breakpoint-tablet-desktop-transition: 1068px;
-  --breakpoint-small-desktop: 1250px;
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 48rem;
+  --breakpoint-md: 64rem;
+  --breakpoint-lg: 67rem;
+  --breakpoint-xl: 78.125rem;
+  --breakpoint-small-phone: 30rem;
+  --breakpoint-phone-tablet-transition: 48rem;
+  --breakpoint-small-tablet: 64rem;
+  --breakpoint-tablet-desktop-transition: 67rem;
+  --breakpoint-small-desktop: 78.125rem;
 }
 
 :root {
@@ -416,21 +421,113 @@ template {
 }
 
 :root {
-  --font-family-sans: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro", "SF Pro Text", "San Francisco", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-family-mono: ui-monospace, "SF Mono", Monaco, Menlo, "Cascadia Code", "Source Code Pro", Consolas, monospace;
-  --font-family-serif: Georgia, "New York", Times, "Times New Roman", serif;
+  color-scheme: light;
+  --color-background: var(--color-white);
+  --color-surface: var(--color-white);
+  --color-surface-raised: var(--color-gray6);
+  --color-surface-muted: var(--color-gray5);
+  --color-surface-inset: var(--color-gray4);
+  --color-border: var(--color-gray4);
+  --color-border-strong: var(--color-gray3);
+  --color-text: hsla(0, 0%, 0%, 0.85);
+  --color-text-muted: hsla(0, 0%, 0%, 0.5);
+  --color-text-subtle: hsla(0, 0%, 0%, 0.25);
+  --color-text-disabled: hsla(0, 0%, 0%, 0.1);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-indigo);
+  --color-focus-ring: hsla(208, 100%, 50%, 0.35);
+  --shadow-color: hsla(240, 10%, 12%, 0.08);
+  --shadow-color-strong: hsla(240, 10%, 12%, 0.14);
+  --background-color: var(--color-background);
+  --surface-color-primary: var(--color-surface);
+  --surface-color-secondary: var(--color-surface-raised);
+  --surface-color-tertiary: var(--color-surface-muted);
+  --surface-color-quaternary: var(--color-surface-inset);
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-muted);
+  --text-tertiary: var(--color-text-subtle);
+  --text-quaternary: var(--color-text-disabled);
+  --text-quinary: hsla(0, 0%, 0%, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-background: var(--color-black);
+    --color-surface: var(--color-black);
+    --color-surface-raised: hsl(240, 2%, 9%);
+    --color-surface-muted: hsl(240, 3%, 12%);
+    --color-surface-inset: hsl(240, 2%, 9%);
+    --color-border: hsl(240, 2%, 23%);
+    --color-border-strong: hsl(240, 1%, 29%);
+    --color-text: hsla(0, 0%, 100%, 0.85);
+    --color-text-muted: hsla(0, 0%, 100%, 0.5);
+    --color-text-subtle: hsla(0, 0%, 100%, 0.25);
+    --color-text-disabled: hsla(0, 0%, 100%, 0.1);
+    --color-link: var(--color-cyan);
+    --color-link-hover: var(--color-blue);
+    --color-focus-ring: hsla(197, 100%, 70%, 0.4);
+    --shadow-color: hsla(0, 0%, 0%, 0.28);
+    --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+    --background-color: var(--color-background);
+    --surface-color-primary: var(--color-surface);
+    --surface-color-secondary: var(--color-surface-raised);
+    --surface-color-tertiary: var(--color-surface-muted);
+    --surface-color-quaternary: var(--color-surface-inset);
+    --text-primary: var(--color-text);
+    --text-secondary: var(--color-text-muted);
+    --text-tertiary: var(--color-text-subtle);
+    --text-quaternary: var(--color-text-disabled);
+    --text-quinary: hsla(0, 0%, 100%, 0.05);
+  }
+}
+.dark,
+[data-theme=dark] {
+  color-scheme: dark;
+  --color-background: var(--color-black);
+  --color-surface: var(--color-black);
+  --color-surface-raised: hsl(240, 2%, 9%);
+  --color-surface-muted: hsl(240, 3%, 12%);
+  --color-surface-inset: hsl(240, 2%, 9%);
+  --color-border: hsl(240, 2%, 23%);
+  --color-border-strong: hsl(240, 1%, 29%);
+  --color-text: hsla(0, 0%, 100%, 0.85);
+  --color-text-muted: hsla(0, 0%, 100%, 0.5);
+  --color-text-subtle: hsla(0, 0%, 100%, 0.25);
+  --color-text-disabled: hsla(0, 0%, 100%, 0.1);
+  --color-link: var(--color-cyan);
+  --color-link-hover: var(--color-blue);
+  --color-focus-ring: hsla(197, 100%, 70%, 0.4);
+  --shadow-color: hsla(0, 0%, 0%, 0.28);
+  --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+  --background-color: var(--color-background);
+  --surface-color-primary: var(--color-surface);
+  --surface-color-secondary: var(--color-surface-raised);
+  --surface-color-tertiary: var(--color-surface-muted);
+  --surface-color-quaternary: var(--color-surface-inset);
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-muted);
+  --text-tertiary: var(--color-text-subtle);
+  --text-quaternary: var(--color-text-disabled);
+  --text-quinary: hsla(0, 0%, 100%, 0.05);
+}
+
+:root {
+  --font-family-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-family-serif: ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
 :root {
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-2xl: 1.25rem;
+  --text-3xl: 1.5rem;
+  --text-4xl: 1.875rem;
+  --text-5xl: 2.25rem;
 }
 
 :root {
@@ -461,59 +558,59 @@ template {
   --letter-spacing-widest: 0.1em;
 }
 
-@media (max-width: 1250px) {
-  :root {
-    --text-base: 0.975rem;
-    --text-lg: 1.1rem;
-    --text-xl: 1.225rem;
-    --text-2xl: 1.45rem;
-    --text-3xl: 1.8rem;
-    --text-4xl: 2.15rem;
-    --text-5xl: 2.85rem;
-  }
-}
-@media (max-width: 1068px) {
+@media (min-width: 30rem) {
   :root {
     --text-base: 0.95rem;
-    --text-lg: 1.075rem;
-    --text-xl: 1.2rem;
-    --text-2xl: 1.4rem;
-    --text-3xl: 1.725rem;
-    --text-4xl: 2.05rem;
-    --text-5xl: 2.7rem;
-  }
-}
-@media (max-width: 1023px) {
-  :root {
-    --text-base: 0.925rem;
-    --text-lg: 1.05rem;
-    --text-xl: 1.175rem;
-    --text-2xl: 1.35rem;
-    --text-3xl: 1.65rem;
-    --text-4xl: 1.95rem;
-    --text-5xl: 2.55rem;
-  }
-}
-@media (max-width: 767px) {
-  :root {
-    --text-base: 0.9rem;
     --text-lg: 1.025rem;
     --text-xl: 1.15rem;
     --text-2xl: 1.3rem;
     --text-3xl: 1.575rem;
-    --text-4xl: 1.85rem;
+    --text-4xl: 1.95rem;
     --text-5xl: 2.4rem;
   }
 }
-@media (max-width: 480px) {
+@media (min-width: 48rem) {
   :root {
-    --text-base: 0.875rem;
-    --text-lg: 1rem;
-    --text-xl: 1.125rem;
-    --text-2xl: 1.25rem;
-    --text-3xl: 1.5rem;
-    --text-4xl: 1.75rem;
-    --text-5xl: 2.25rem;
+    --text-base: 0.975rem;
+    --text-lg: 1.05rem;
+    --text-xl: 1.175rem;
+    --text-2xl: 1.35rem;
+    --text-3xl: 1.65rem;
+    --text-4xl: 2rem;
+    --text-5xl: 2.6rem;
+  }
+}
+@media (min-width: 64rem) {
+  :root {
+    --text-base: 1rem;
+    --text-lg: 1.075rem;
+    --text-xl: 1.2rem;
+    --text-2xl: 1.4rem;
+    --text-3xl: 1.725rem;
+    --text-4xl: 2.1rem;
+    --text-5xl: 2.7rem;
+  }
+}
+@media (min-width: 67rem) {
+  :root {
+    --text-base: 1.025rem;
+    --text-lg: 1.1rem;
+    --text-xl: 1.225rem;
+    --text-2xl: 1.45rem;
+    --text-3xl: 1.8rem;
+    --text-4xl: 2.2rem;
+    --text-5xl: 2.85rem;
+  }
+}
+@media (min-width: 78.125rem) {
+  :root {
+    --text-base: 1.05rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
   }
 }
 :root {
@@ -539,17 +636,17 @@ template {
 }
 
 :root {
-  --offset-none: 0;
-  --offset-xxs: 0.125rem;
-  --offset-xs: 0.25rem;
-  --offset-sm: 0.5rem;
-  --offset-md: 1rem;
-  --offset-lg: 1.5rem;
-  --offset-xl: 2rem;
-  --offset-2xl: 2.5rem;
-  --offset-3xl: 3rem;
-  --offset-4xl: 4rem;
-  --offset-5xl: 5rem;
+  --offset-none: var(--space-0);
+  --offset-xxs: var(--space-2xs);
+  --offset-xs: var(--space-1);
+  --offset-sm: var(--space-2);
+  --offset-md: var(--space-4);
+  --offset-lg: var(--space-6);
+  --offset-xl: var(--space-8);
+  --offset-2xl: var(--space-10);
+  --offset-3xl: var(--space-12);
+  --offset-4xl: var(--space-16);
+  --offset-5xl: var(--space-20);
 }
 
 :root {
@@ -561,6 +658,7 @@ template {
 
 :root {
   --space-0: 0;
+  --space-2xs: 0.125rem;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -590,6 +688,14 @@ template {
   --space-72: 18rem;
   --space-80: 20rem;
   --space-96: 24rem;
+  --space-3xs: var(--space-2xs);
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-6);
+  --space-xl: var(--space-8);
+  --space-2xl: var(--space-12);
+  --space-3xl: var(--space-16);
 }
 
 :root {
@@ -619,4 +725,20 @@ template {
   --radius-2xl: 1.5rem;
   --radius-3xl: 2rem;
   --radius-full: 9999px;
+}
+
+:root {
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 10px var(--shadow-color);
+  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
+  --transition-duration-fast: 120ms;
+  --transition-duration-normal: 180ms;
+  --transition-duration-slow: 240ms;
+  --transition-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --transition-easing-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+  --transition-fast: var(--transition-duration-fast) var(--transition-easing-standard);
+  --transition-normal: var(--transition-duration-normal) var(--transition-easing-standard);
+  --transition-slow: var(--transition-duration-slow) var(--transition-easing-emphasized);
 }

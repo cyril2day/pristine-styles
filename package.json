@@ -1,7 +1,7 @@
 {
   "name": "pristine-styles",
   "version": "0.1.0",
-  "description": "Reusable design tokens and base styles for projects",
+  "description": "Mobile-first reusable design tokens and base styles for projects",
   "license": "MIT",
   "author": "psi <cylonsido@gmail.com>",
   "contributors": [
@@ -20,6 +20,9 @@
     "css",
     "scss",
     "design-tokens",
+    "mobile-first",
+    "responsive-design",
+    "themeable",
     "normalize.css",
     "design-system"
   ],
@@ -31,6 +34,9 @@
   "scripts": {
     "build": "sass scss/index.scss pristine-styles.css --no-source-map",
     "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"

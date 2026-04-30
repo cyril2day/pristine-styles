@@ -1,0 +1,106 @@
+// Semantic Theme Tokens
+// =============================================================================
+// Theme-aware aliases for background, surface, text, borders, links, and
+// shadows. Prefer these tokens when the value carries meaning.
+
+:root {
+  color-scheme: light;
+
+  --color-background: var(--color-white);
+  --color-surface: var(--color-white);
+  --color-surface-raised: var(--color-gray6);
+  --color-surface-muted: var(--color-gray5);
+  --color-surface-inset: var(--color-gray4);
+  --color-border: var(--color-gray4);
+  --color-border-strong: var(--color-gray3);
+  --color-text: hsla(0, 0%, 0%, 0.85);
+  --color-text-muted: hsla(0, 0%, 0%, 0.5);
+  --color-text-subtle: hsla(0, 0%, 0%, 0.25);
+  --color-text-disabled: hsla(0, 0%, 0%, 0.1);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-indigo);
+  --color-focus-ring: hsla(208, 100%, 50%, 0.35);
+  --shadow-color: hsla(240, 10%, 12%, 0.08);
+  --shadow-color-strong: hsla(240, 10%, 12%, 0.14);
+
+  --background-color: var(--color-background);
+  --surface-color-primary: var(--color-surface);
+  --surface-color-secondary: var(--color-surface-raised);
+  --surface-color-tertiary: var(--color-surface-muted);
+  --surface-color-quaternary: var(--color-surface-inset);
+
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-muted);
+  --text-tertiary: var(--color-text-subtle);
+  --text-quaternary: var(--color-text-disabled);
+  --text-quinary: hsla(0, 0%, 0%, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-background: var(--color-black);
+    --color-surface: var(--color-black);
+    --color-surface-raised: hsl(240, 2%, 9%);
+    --color-surface-muted: hsl(240, 3%, 12%);
+    --color-surface-inset: hsl(240, 2%, 9%);
+    --color-border: hsl(240, 2%, 23%);
+    --color-border-strong: hsl(240, 1%, 29%);
+    --color-text: hsla(0, 0%, 100%, 0.85);
+    --color-text-muted: hsla(0, 0%, 100%, 0.5);
+    --color-text-subtle: hsla(0, 0%, 100%, 0.25);
+    --color-text-disabled: hsla(0, 0%, 100%, 0.1);
+    --color-link: var(--color-cyan);
+    --color-link-hover: var(--color-blue);
+    --color-focus-ring: hsla(197, 100%, 70%, 0.4);
+    --shadow-color: hsla(0, 0%, 0%, 0.28);
+    --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+
+    --background-color: var(--color-background);
+    --surface-color-primary: var(--color-surface);
+    --surface-color-secondary: var(--color-surface-raised);
+    --surface-color-tertiary: var(--color-surface-muted);
+    --surface-color-quaternary: var(--color-surface-inset);
+
+    --text-primary: var(--color-text);
+    --text-secondary: var(--color-text-muted);
+    --text-tertiary: var(--color-text-subtle);
+    --text-quaternary: var(--color-text-disabled);
+    --text-quinary: hsla(0, 0%, 100%, 0.05);
+  }
+}
+
+.dark,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-background: var(--color-black);
+  --color-surface: var(--color-black);
+  --color-surface-raised: hsl(240, 2%, 9%);
+  --color-surface-muted: hsl(240, 3%, 12%);
+  --color-surface-inset: hsl(240, 2%, 9%);
+  --color-border: hsl(240, 2%, 23%);
+  --color-border-strong: hsl(240, 1%, 29%);
+  --color-text: hsla(0, 0%, 100%, 0.85);
+  --color-text-muted: hsla(0, 0%, 100%, 0.5);
+  --color-text-subtle: hsla(0, 0%, 100%, 0.25);
+  --color-text-disabled: hsla(0, 0%, 100%, 0.1);
+  --color-link: var(--color-cyan);
+  --color-link-hover: var(--color-blue);
+  --color-focus-ring: hsla(197, 100%, 70%, 0.4);
+  --shadow-color: hsla(0, 0%, 0%, 0.28);
+  --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+
+  --background-color: var(--color-background);
+  --surface-color-primary: var(--color-surface);
+  --surface-color-secondary: var(--color-surface-raised);
+  --surface-color-tertiary: var(--color-surface-muted);
+  --surface-color-quaternary: var(--color-surface-inset);
+
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-muted);
+  --text-tertiary: var(--color-text-subtle);
+  --text-quaternary: var(--color-text-disabled);
+  --text-quinary: hsla(0, 0%, 100%, 0.05);
+}

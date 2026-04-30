@@ -9,6 +9,7 @@
 
 :root {
   --space-0: 0;
+  --space-2xs: 0.125rem;  // 2px
   --space-1: 0.25rem;   // 4px
   --space-2: 0.5rem;    // 8px
   --space-3: 0.75rem;   // 12px
@@ -38,6 +39,15 @@
   --space-72: 18rem;    // 288px
   --space-80: 20rem;    // 320px
   --space-96: 24rem;    // 384px
+
+  --space-3xs: var(--space-2xs);
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-6);
+  --space-xl: var(--space-8);
+  --space-2xl: var(--space-12);
+  --space-3xl: var(--space-16);
 }
 
 // -----------------------------------------------------------------------------
