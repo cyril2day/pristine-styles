@@ -4,8 +4,11 @@
 // Generic names are the primary API. Legacy names remain as compatibility
 // aliases.
 
+@use 'sass:map';
+@use 'sass:string';
+
 // -----------------------------------------------------------------------------
-// SCSS Variables (for media queries)
+// SCSS Values (for media queries and mixins)
 // -----------------------------------------------------------------------------
 
 $breakpoint-xs: 30rem;
@@ -20,9 +23,40 @@ $breakpoint-small-tablet: $breakpoint-md;
 $breakpoint-tablet-desktop-transition: $breakpoint-lg;
 $breakpoint-small-desktop: $breakpoint-xl;
 
+$breakpoint-up-values: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  small-phone: $breakpoint-small-phone,
+  phone-tablet-transition: $breakpoint-phone-tablet-transition,
+  small-tablet: $breakpoint-small-tablet,
+  tablet-desktop-transition: $breakpoint-tablet-desktop-transition,
+  small-desktop: $breakpoint-small-desktop,
+);
+
+@function breakpoint-up-value($size) {
+  $key: string.unquote($size);
+
+  @if map.has-key($breakpoint-up-values, $key) {
+    @return map.get($breakpoint-up-values, $key);
+  }
+
+  @error 'Unknown breakpoint `#{$size}`. Use xs, sm, md, lg, xl, or a legacy alias.';
+}
+
+@mixin breakpoint-up($size) {
+  @media (min-width: breakpoint-up-value($size)) {
+    @content;
+  }
+}
+
 // -----------------------------------------------------------------------------
 // CSS Custom Properties (for runtime usage)
 // -----------------------------------------------------------------------------
+// These mirror the SCSS values so JavaScript or inline styles can read them.
+// Media queries should use the SCSS variables or the breakpoint-up() mixin.
 
 :root {
   --breakpoint-xs: #{$breakpoint-xs};

@@ -1,110 +1,75 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
+/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
 /**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
 
-/* Sections
-   ========================================================================== */
 /**
- * Remove the margin in all browsers.
- */
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the line height in all browsers.
+3. Prevent adjustments of font size after orientation changes in iOS.
+4. Use a more readable tab size (opinionated).
+*/
+html {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; /* 1 */
+  line-height: 1.15; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+  tab-size: 4; /* 4 */
+}
+
+/*
+Sections
+========
+*/
+/**
+Remove the margin in all browsers.
+*/
 body {
   margin: 0;
 }
 
+/*
+Text-level semantics
+====================
+*/
 /**
- * Render the `main` element consistently in IE.
- */
-main {
-  display: block;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
-   ========================================================================== */
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Remove the gray background on active links in IE 10.
- */
-a {
-  background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
+Add the correct font weight in Chrome and Safari.
+*/
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
 code,
 kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
 /**
- * Add the correct font size in all browsers.
- */
+Add the correct font size in all browsers.
+*/
 small {
   font-size: 80%;
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
 sub,
 sup {
   font-size: 75%;
@@ -121,21 +86,25 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
+/*
+Tabular data
+============
+*/
 /**
- * Remove the border on images inside links in IE 10.
- */
-img {
-  border-style: none;
+Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  border-color: currentcolor;
 }
 
-/* Forms
-   ========================================================================== */
+/*
+Forms
+=====
+*/
 /**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
 button,
 input,
 optgroup,
@@ -148,26 +117,8 @@ textarea {
 }
 
 /**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-button,
-input { /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-button,
-select { /* 1 */
-  text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
+Correct the inability to style clickable types in iOS and Safari.
+*/
 button,
 [type=button],
 [type=reset],
@@ -176,135 +127,61 @@ button,
 }
 
 /**
- * Remove the inner border and padding in Firefox.
- */
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
   padding: 0;
 }
 
 /**
- * Restore the focus styles unset by the previous rule.
- */
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
+Add the correct vertical alignment in Chrome and Firefox.
+*/
 progress {
   vertical-align: baseline;
 }
 
 /**
- * Remove the default vertical scrollbar in IE 10+.
- */
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
 [type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
 /**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-[type=search]::-webkit-search-decoration {
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
-/* Interactive
-   ========================================================================== */
 /*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-details {
-  display: block;
-}
-
+Interactive
+===========
+*/
 /*
- * Add the correct display in all browsers.
- */
+Add the correct display in Chrome and Safari.
+*/
 summary {
   display: list-item;
-}
-
-/* Misc
-   ========================================================================== */
-/**
- * Add the correct display in IE 10+.
- */
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-[hidden] {
-  display: none;
 }
 
 :root {
@@ -337,87 +214,10 @@ template {
   --color-black: hsl(0, 0%, 0%);
   --color-gray: hsl(240, 2%, 57%);
   --color-gray2: hsl(240, 3%, 69%);
-  --color-gray3:	hsl(240, 5%, 79%);
-  --color-gray4:	hsl(240, 6%, 83%);
-  --color-gray5:	hsl(240, 11%, 91%);
+  --color-gray3: hsl(240, 5%, 79%);
+  --color-gray4: hsl(240, 6%, 83%);
+  --color-gray5: hsl(240, 11%, 91%);
   --color-gray6: hsl(240, 24%, 96%);
-  --text-primary: hsla(0, 0%, 0%, 0.85);
-  --text-secondary: hsla(0, 0%, 0%, 0.50);
-  --text-tertiary: hsla(0, 0%, 0%, 0.25);
-  --text-quaternary: hsla(0, 0%, 0%, 0.10);
-  --text-quinary: hsla(0, 0%, 0%, 0.05);
-  --background-color: var(--color-white);
-  --surface-color-primary:	hsl(240, 51%, 100%, 0.9);
-  --surface-color-secondary: hsl(240, 25%, 98%);
-  --surface-color-tertiary: hsl(0, 0%, 94%);
-  --surface-color-quaternary: hsl(240, 11%, 96%) ;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-red: hsl(359, 100%, 63%);
-    --color-orange: hsl(28, 100%, 59%);
-    --color-yellow: hsl(50, 100%, 50%);
-    --color-green: hsl(135, 64%, 50%);
-    --color-mint: hsl(174, 100%, 43%);
-    --color-teal: hsl(184, 100%, 44%);
-    --color-cyan: hsl(197, 100%, 70%);
-    --color-blue: hsl(206, 100%, 50%);
-    --color-indigo: hsl(234, 100%, 71%);
-    --color-purple: hsl(293, 88%, 58%);
-    --color-pink: hsl(348, 100%, 61%);
-    --color-brown: hsl(27, 36%, 56%);
-    --color-gray: hsl(240, 2%, 61%);
-    --color-white: hsl(0, 0%, 100%);
-    --color-black: hsl(0, 0%, 0%);
-    --color-gray2:	hsl(240, 1%, 39%);
-    --color-gray3:	hsl(240, 1%, 29%);
-    --color-gray4:	hsl(240, 2%, 23%);
-    --color-gray5: hsl(240, 2%, 18%);
-    --color-gray6:	hsl(240, 3%, 11%);
-    --text-primary: hsla(0, 0%, 100%, 0.85);
-    --text-secondary: hsla(0, 0%, 100%, 0.50);
-    --text-tertiary: hsla(0, 0%, 100%, 0.25);
-    --text-quaternary: hsla(0, 0%, 100%, 0.10);
-    --text-quinary: hsla(0, 0%, 100%, 0.05);
-    --background-color: var(--color-black);
-    --surface-color-primary: var(--color-black);
-    --surface-color-secondary:	hsl(240, 2%, 9%);
-    --surface-color-tertiary: hsl(240, 3%, 12%);
-    --surface-color-quaternary: hsl(240, 2%, 9%);
-  }
-}
-.dark {
-  --color-red: hsl(359, 100%, 63%);
-  --color-orange: hsl(28, 100%, 59%);
-  --color-yellow: hsl(50, 100%, 50%);
-  --color-green: hsl(135, 64%, 50%);
-  --color-mint: hsl(174, 100%, 43%);
-  --color-teal: hsl(184, 100%, 44%);
-  --color-cyan: hsl(197, 100%, 70%);
-  --color-blue: hsl(206, 100%, 50%);
-  --color-indigo: hsl(234, 100%, 71%);
-  --color-purple: hsl(293, 88%, 58%);
-  --color-pink: hsl(348, 100%, 61%);
-  --color-brown: hsl(27, 36%, 56%);
-  --color-gray: hsl(240, 2%, 61%);
-  --color-white: hsl(0, 0%, 100%);
-  --color-black: hsl(0, 0%, 0%);
-  --color-gray2:	hsl(240, 1%, 39%);
-  --color-gray3:	hsl(240, 1%, 29%);
-  --color-gray4:	hsl(240, 2%, 23%);
-  --color-gray5: hsl(240, 2%, 18%);
-  --color-gray6:	hsl(240, 3%, 11%);
-  --text-primary: hsla(0, 0%, 100%, 0.85);
-  --text-secondary: hsla(0, 0%, 100%, 0.50);
-  --text-tertiary: hsla(0, 0%, 100%, 0.25);
-  --text-quaternary: hsla(0, 0%, 100%, 0.10);
-  --text-quinary: hsla(0, 0%, 100%, 0.05);
-  --background-color: var(--color-black);
-  --surface-color-primary: var(--color-black);
-  --surface-color-secondary:	hsl(240, 2%, 9%);
-  --surface-color-tertiary: hsl(240, 3%, 12%);
-  --surface-color-quaternary: hsl(240, 2%, 9%);
 }
 
 :root {
@@ -438,6 +238,11 @@ template {
   --color-focus-ring: hsla(208, 100%, 50%, 0.35);
   --shadow-color: hsla(240, 10%, 12%, 0.08);
   --shadow-color-strong: hsla(240, 10%, 12%, 0.14);
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 10px var(--shadow-color);
+  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --background-color: var(--color-background);
   --surface-color-primary: var(--color-surface);
   --surface-color-secondary: var(--color-surface-raised);
@@ -469,6 +274,11 @@ template {
     --color-focus-ring: hsla(197, 100%, 70%, 0.4);
     --shadow-color: hsla(0, 0%, 0%, 0.28);
     --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+    --shadow-none: none;
+    --shadow-sm: 0 1px 2px var(--shadow-color);
+    --shadow-md: 0 4px 10px var(--shadow-color);
+    --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+    --shadow-focus: 0 0 0 3px var(--color-focus-ring);
     --background-color: var(--color-background);
     --surface-color-primary: var(--color-surface);
     --surface-color-secondary: var(--color-surface-raised);
@@ -500,6 +310,11 @@ template {
   --color-focus-ring: hsla(197, 100%, 70%, 0.4);
   --shadow-color: hsla(0, 0%, 0%, 0.28);
   --shadow-color-strong: hsla(0, 0%, 0%, 0.4);
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 10px var(--shadow-color);
+  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --background-color: var(--color-background);
   --surface-color-primary: var(--color-surface);
   --surface-color-secondary: var(--color-surface-raised);
@@ -513,8 +328,8 @@ template {
 }
 
 :root {
-  --font-family-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", sans-serif, ui-sans-serif;
+  --font-family-mono: SFMono-Regular, "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --font-family-serif: ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
@@ -636,21 +451,7 @@ template {
 }
 
 :root {
-  --offset-none: var(--space-0);
-  --offset-xxs: var(--space-2xs);
-  --offset-xs: var(--space-1);
-  --offset-sm: var(--space-2);
-  --offset-md: var(--space-4);
-  --offset-lg: var(--space-6);
-  --offset-xl: var(--space-8);
-  --offset-2xl: var(--space-10);
-  --offset-3xl: var(--space-12);
-  --offset-4xl: var(--space-16);
-  --offset-5xl: var(--space-20);
-}
-
-:root {
-  --inset-none: var(--offset-none);
+  --inset-none: var(--space-0);
   --inset-auto: auto;
   --inset-full: 100%;
   --inset-half: 50%;
@@ -728,11 +529,6 @@ template {
 }
 
 :root {
-  --shadow-none: none;
-  --shadow-sm: 0 1px 2px var(--shadow-color);
-  --shadow-md: 0 4px 10px var(--shadow-color);
-  --shadow-lg: 0 12px 24px var(--shadow-color-strong);
-  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --transition-duration-fast: 120ms;
   --transition-duration-normal: 180ms;
   --transition-duration-slow: 240ms;

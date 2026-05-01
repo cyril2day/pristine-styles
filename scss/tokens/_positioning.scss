@@ -1,33 +1,13 @@
 // Positioning Tokens
 // =============================================================================
-// Tokens for position properties, offsets, and related utilities.
-
-// -----------------------------------------------------------------------------
-// Offsets (for top, right, bottom, left)
-// -----------------------------------------------------------------------------
-// These tokens follow the same spacing scale as box‑model tokens.
-// They can be used for positioning elements, margins, paddings, etc.
-
-:root {
-  --offset-none: var(--space-0);
-  --offset-xxs: var(--space-2xs);
-  --offset-xs: var(--space-1);
-  --offset-sm: var(--space-2);
-  --offset-md: var(--space-4);
-  --offset-lg: var(--space-6);
-  --offset-xl: var(--space-8);
-  --offset-2xl: var(--space-10);
-  --offset-3xl: var(--space-12);
-  --offset-4xl: var(--space-16);
-  --offset-5xl: var(--space-20);
-}
+// Tokens for position properties and inset utilities.
 
 // -----------------------------------------------------------------------------
 // Insets (shorthand for top/right/bottom/left)
 // -----------------------------------------------------------------------------
 
 :root {
-  --inset-none: var(--offset-none);
+  --inset-none: var(--space-0);
   --inset-auto: auto;
   --inset-full: 100%;
   --inset-half: 50%;

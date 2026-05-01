@@ -15,7 +15,9 @@
     "url": "https://github.com/cyril2day-uopeople/pristine-styles"
   },
   "homepage": "https://github.com/cyril2day-uopeople/pristine-styles#readme",
-  "bugs": "https://github.com/cyril2day-uopeople/pristine-styles/issues",
+  "bugs": {
+    "url": "https://github.com/cyril2day-uopeople/pristine-styles/issues"
+  },
   "keywords": [
     "css",
     "scss",
@@ -23,22 +25,28 @@
     "mobile-first",
     "responsive-design",
     "themeable",
-    "normalize.css",
     "design-system"
   ],
   "main": "pristine-styles.css",
   "style": "pristine-styles.css",
   "files": [
-    "pristine-styles.css"
+    "pristine-styles.css",
+    "pristine-styles.min.css",
+    "scss/",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
-    "build": "sass scss/index.scss pristine-styles.css --no-source-map",
+    "build": "sass scss/index.scss pristine-styles.css --no-source-map && sass scss/index.scss pristine-styles.min.css --no-source-map --style=compressed",
+    "build:css": "sass scss/index.scss pristine-styles.css --no-source-map",
+    "build:css:min": "sass scss/index.scss pristine-styles.min.css --no-source-map --style=compressed",
+    "test": "echo \"No tests in core package\" && exit 0",
     "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "sass": "^1.86.0"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
   }
 }
