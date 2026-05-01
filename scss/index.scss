@@ -1,5 +1,5 @@
 // Main entry point for pristine-styles
-// Provides normalize.css reset and all design tokens.
+// Provides modern-normalize reset and all design tokens.
 
-@use 'normalize';
+@use 'modern-normalize';
 @forward 'tokens';

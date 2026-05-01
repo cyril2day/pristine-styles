@@ -1,23 +1,69 @@
 // Breakpoint Tokens
 // =============================================================================
-// SCSS variables for use in media queries and mixins.
-// CSS custom properties are also defined for JavaScript/component usage.
+// Mobile-first breakpoint tokens.
+// Generic names are the primary API. Legacy names remain as compatibility
+// aliases.
+
+@use 'sass:map';
+@use 'sass:string';
 
 // -----------------------------------------------------------------------------
-// SCSS Variables (for media queries)
+// SCSS Values (for media queries and mixins)
 // -----------------------------------------------------------------------------
 
-$breakpoint-small-phone: 480px;
-$breakpoint-phone-tablet-transition: 767px;
-$breakpoint-small-tablet: 1023px;
-$breakpoint-tablet-desktop-transition: 1068px;
-$breakpoint-small-desktop: 1250px;
+$breakpoint-xs: 30rem;
+$breakpoint-sm: 48rem;
+$breakpoint-md: 64rem;
+$breakpoint-lg: 67rem;
+$breakpoint-xl: 78.125rem;
+
+$breakpoint-small-phone: $breakpoint-xs;
+$breakpoint-phone-tablet-transition: $breakpoint-sm;
+$breakpoint-small-tablet: $breakpoint-md;
+$breakpoint-tablet-desktop-transition: $breakpoint-lg;
+$breakpoint-small-desktop: $breakpoint-xl;
+
+$breakpoint-up-values: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  small-phone: $breakpoint-small-phone,
+  phone-tablet-transition: $breakpoint-phone-tablet-transition,
+  small-tablet: $breakpoint-small-tablet,
+  tablet-desktop-transition: $breakpoint-tablet-desktop-transition,
+  small-desktop: $breakpoint-small-desktop,
+);
+
+@function breakpoint-up-value($size) {
+  $key: string.unquote($size);
+
+  @if map.has-key($breakpoint-up-values, $key) {
+    @return map.get($breakpoint-up-values, $key);
+  }
+
+  @error 'Unknown breakpoint `#{$size}`. Use xs, sm, md, lg, xl, or a legacy alias.';
+}
+
+@mixin breakpoint-up($size) {
+  @media (min-width: breakpoint-up-value($size)) {
+    @content;
+  }
+}
 
 // -----------------------------------------------------------------------------
 // CSS Custom Properties (for runtime usage)
 // -----------------------------------------------------------------------------
+// These mirror the SCSS values so JavaScript or inline styles can read them.
+// Media queries should use the SCSS variables or the breakpoint-up() mixin.
 
 :root {
+  --breakpoint-xs: #{$breakpoint-xs};
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
   --breakpoint-small-phone: #{$breakpoint-small-phone};
   --breakpoint-phone-tablet-transition: #{$breakpoint-phone-tablet-transition};
   --breakpoint-small-tablet: #{$breakpoint-small-tablet};

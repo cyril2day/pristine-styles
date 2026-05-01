@@ -1,3 +1,17 @@
 // Miscellaneous Tokens
 // =============================================================================
-// Tokens that don't fit into the other categories: shadows, transitions, filters, etc.
+// Tokens that don't fit into the other categories: transitions and reusable
+// primitives.
+
+:root {
+  --transition-duration-fast: 120ms;
+  --transition-duration-normal: 180ms;
+  --transition-duration-slow: 240ms;
+
+  --transition-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --transition-easing-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+
+  --transition-fast: var(--transition-duration-fast) var(--transition-easing-standard);
+  --transition-normal: var(--transition-duration-normal) var(--transition-easing-standard);
+  --transition-slow: var(--transition-duration-slow) var(--transition-easing-emphasized);
+}
